@@ -140,9 +140,9 @@ export const DownloadTab: React.FC<DownloadTabProps> = ({
     if (!response.ok) {
       const err = await response.json();
       throw new Error(err.detail || 'Data cleaning service failed.');
-    }
+    } 
 
-    const res = await response.json();
+   // const res = await response.json();
 
     setIsCleaned(true);
 

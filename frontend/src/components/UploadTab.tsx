@@ -48,7 +48,7 @@ export const UploadTab: React.FC<UploadTabProps> = ({
       formData.append('file', file);
       formData.append('use_demo', 'false');
 
-      const response = await fetch('http://localhost:8000/upload', {
+      const response = await fetch('https://transaction-validator-backend-jse9.onrender.com/upload', {
         method: 'POST',
         body: formData,
       });

@@ -81,10 +81,10 @@ export const DownloadTab: React.FC<DownloadTabProps> = ({
     }
   };
 
-  const handleClean = async () => {
+  /*const handleClean = async () => {
     setIsCleaning(true);
     try {
-      const response = await fetch('http://localhost:8000/clean', {
+      const response = await fetch('https://transaction-validator-backend-jse9.onrender.com/clean', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -110,12 +110,62 @@ export const DownloadTab: React.FC<DownloadTabProps> = ({
     } finally {
       setIsCleaning(false);
     }
-  };
+  };*/
+
+  const handleClean = async () => {
+  setIsCleaning(true);
+
+  try {
+    const response = await fetch(
+      'https://transaction-validator-backend-jse9.onrender.com/clean',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          file_id: fileId,
+          options: {
+            trim_whitespace: options.remove_whitespace,
+            standardize_dates: options.standardize_dates,
+            replace_nulls: options.replace_null_values,
+            normalize_payments: options.normalize_payment_modes,
+            remove_duplicates: options.remove_duplicates,
+            text_case: options.convert_text_case
+          }
+        })
+      }
+    );
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.detail || 'Data cleaning service failed.');
+    }
+
+    const res = await response.json();
+
+    setIsCleaned(true);
+
+    onShowToast(
+      'Smart cleaning completed successfully!',
+      'success'
+    );
+
+    if (totalRows > 10000) {
+      handleSplit(10000);
+    }
+
+  } catch (err: any) {
+    onShowToast(err.message || 'Cleaning failed.', 'error');
+  } finally {
+    setIsCleaning(false);
+  }
+};
 
   const handleSplit = async (size = 10000) => {
     setIsSplitting(true);
     try {
-      const response = await fetch('http://localhost:8000/split', {
+      const response = await fetch('https://transaction-validator-backend-jse9.onrender.com/split', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -141,8 +191,8 @@ export const DownloadTab: React.FC<DownloadTabProps> = ({
   const triggerDownload = async (url: string, filename: string) => {
     try {
       const requestUrl = url.includes('/download/chunks/') 
-        ? `http://localhost:8000${url}`
-        : `http://localhost:8000${url}?file_id=${fileId}`;
+        ? `https://transaction-validator-backend-jse9.onrender.com${url}`
+        : `https://transaction-validator-backend-jse9.onrender.com${url}?file_id=${fileId}`;
         
       const res = await fetch(requestUrl);
       if (!res.ok) throw new Error("Server error occurred during download.");

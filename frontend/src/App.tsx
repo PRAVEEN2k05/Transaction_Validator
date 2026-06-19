@@ -109,7 +109,7 @@ function App() {
     setActiveTab('dashboard'); // Redirect to dashboard tab to show logs
     
     try {
-      const response = await fetch('http://localhost:8000/validate', {
+      const response = await fetch('https://transaction-validator-backend-jse9.onrender.com/validate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ file_id: fileId }),
@@ -147,7 +147,7 @@ function App() {
       const formData = new FormData();
       formData.append('use_demo', 'true');
 
-      const response = await fetch('http://localhost:8000/upload', {
+      const response = await fetch('https://transaction-validator-backend-jse9.onrender.com/upload', {
         method: 'POST',
         body: formData,
       });

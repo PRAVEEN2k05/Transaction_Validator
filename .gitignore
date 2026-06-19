@@ -1,0 +1,20 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Frontend
+node_modules/
+dist/
+
+# Generated files
+uploads/
+outputs/
+reports/
+chunks/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store

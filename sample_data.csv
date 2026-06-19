@@ -1,0 +1,16 @@
+order_id,customer_name,country,phone,transaction_date,transaction_time,payment_mode,amount,price,quantity,currency,email
+TXN001,Aarav Sharma,India,+91 9876543210,19-06-2026,14:35:22,UPI,1500.0,750.0,2,INR,aarav@gmail.com
+TXN002,Chloe Tan,Singapore,+65 81234567,2026-06-20,09:15,Credit Card,85.5,42.75,2,SGD,chloe@tan.sg
+TXN003,John Smith,USA,1234567890,06/21/2026,18:45:00,Debit Card,1200.0,400.0,3,USD,john.smith@gmail.com
+TXN004,Emma Watson,UK,07700900077,22/06/2026,23:59,Cash,45.0,15.0,3,GBP,watson@uk.co
+TXN005,Liam Neeson,Australia,412345678,2026-06-23,08:30:15,Net Banking,250.0,125.0,2,AUD,neeson@movies.au
+TXN006,Sophia Muller,Germany,015201234567,31/02/2025,25:00,PayPal,-15.0,-5.0,3,EUR,sophia@muller.de
+TXN002,Chloe Tan,Singapore,+65 81234567,20-06-2026,09:15,Credit Card,85.5,42.75,2,SGD,chloe@tan.sg
+TXN008,Oliver Twist,USA,123456789,2026-06-25,12:00:00,Debit Card,450.0,150.0,3,USD,oliver.twist
+TXN009,Noah Ark,France,0612345678,2026-06-26,15:30,UPI,99.0,33.0,3,EUR,noah@ark.fr
+TXN010,James Bond,UK,07700900077,2026-06-27,17:45:12,Cash,1000.0,200.0,5,GBP,bond@mi6.gov.uk
+TXN011,  Priya Patel  ,India,9876543210,28-06-2026,19:30,upi,350.0,175.0,2,INR,priya@yahoo.in
+TXN012,,Singapore,1234,2026-06-29,11:22:33,Credit Card,500.0,250.0,2,SGD,invalid-email@
+TXN013,David Beckham,USA,9876543210,2026-06-30,23:45,Net Banking,-100.0,50.0,-2,USD,david@beckham.com
+TXN014,Hans Schmidt,Germany,4915201234567,01-07-2026,06:15:30,Cash,750.0,0.0,4,EUR,hans@schmidt.de
+TXN015,Taylor Swift,Canada,1234567890,2026-07-02,12:00,BitCoin,120.0,40.0,3,CAD,taylor@swift.ca
